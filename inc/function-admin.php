@@ -59,36 +59,36 @@ function nkSpartaKontaktInfo() {
 // Sadrzaj individualnog polja 
 function nkSpartaPunoIme() {
 	$punoImeKluba = esc_attr(get_option('puno_ime_kluba'));
-	echo '<input type="text" name="puno_ime_kluba" value="'.$punoImeKluba.'" placeholder="Puno Ime Kluba"></input>';
+	echo '<input type="text" name="puno_ime_kluba" value="'.$punoImeKluba.'" placeholder="Puno Ime Kluba" class="regular-text"></input>';
 }
 function nkSpartaSkracenoIme() {
 	$skracenoImeKluba = esc_attr( get_option('skraceno_ime_kluba'));
-	echo '<input type="text" name="skraceno_ime_kluba" value="'.$skracenoImeKluba.'" placeholder="Skraceno Ime Kluba"></input>';
+	echo '<input type="text" name="skraceno_ime_kluba" value="'.$skracenoImeKluba.'" placeholder="Skraceno Ime Kluba" class="regular-text"></input>';
 }
 function nkSpartaImeGrada() {
 	$imeGrada = esc_attr(get_option('grad'));
-	echo '<input type="text" name="grad" value="'.$imeGrada.'" placeholder="Grad"></input>';
+	echo '<input type="text" name="grad" value="'.$imeGrada.'" placeholder="Grad" class="regular-text"></input>';
 }
 function nkSpartaPostBroj() {
 	$postanskiBroj = esc_attr(get_option('postanski_broj'));
-	echo '<input type="text" name="postanski_broj" value="'.$postanskiBroj.'" placeholder="Postanski broj"></input>';
+	echo '<input type="text" name="postanski_broj" value="'.$postanskiBroj.'" placeholder="Postanski broj" class="regular-text"></input>';
 }
 function nkSpartaUlica() {
 	$ulica = esc_attr(get_option('ulica'));
-	echo '<input type="text" name="ulica" value="'.$ulica.'" placeholder="Ulica"></input>';
+	echo '<input type="text" name="ulica" value="'.$ulica.'" placeholder="Ulica" class="regular-text"></input>';
 }
 function nkSpartaKucniBroj() {
 	$kucniBroj = esc_attr( get_option('kucni_broj') );
-	echo '<input type="text" name="kucni_broj" value="'.$kucniBroj.'" placeholder="Kucni broj"></input>';
+	echo '<input type="text" name="kucni_broj" value="'.$kucniBroj.'" placeholder="Kucni broj" class="regular-text"></input>';
 }
 // Kontakt
 function nkSpartaKontaktTelefon() {
 	$brojTelefona = esc_attr(get_option('telefonski_broj'));
-	echo '<input type="text" name="telefonski_broj" value="'.$brojTelefona.'" placeholder="Broj Telefona"></input>';
+	echo '<input type="text" name="telefonski_broj" value="'.$brojTelefona.'" placeholder="Broj Telefona" class="regular-text"></input>';
 }
 function nkSpartaEmail() {
 	$email = esc_attr(get_option('email'));
-		echo '<input type="text" name="email" value="'.$email.'" placeholder="Email"></input>';
+		echo '<input type="text" name="email" value="'.$email.'" placeholder="Email" class="regular-text"></input>';
 
 }
 
