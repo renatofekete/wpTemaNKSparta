@@ -1,7 +1,7 @@
 <?php 
 function nkSpartaAdminPage() {
 	// Dodavanje glavnog admin page
-	add_menu_page( 'NK Sparta Options', 'NK Sparta', 'manage_options', 'nksparta_admin_page', 'nkSpartaMainAdminPage', get_template_directory_uri() . '/img/dashicon/dashicon.png', 61 );
+	add_menu_page( 'NK Sparta Options', 'NK Sparta', 'manage_options', 'nksparta_admin_page', 'nkSpartaMainAdminPage', get_template_directory_uri() . '/img/dashicon/dashicon.png', 58 );
 	// Dodavanje podmenua
 	add_submenu_page( 'nksparta_admin_page', 'NK Sparta Options', 'General', 'manage_options', 'nksparta_admin_page', 'nkSpartaMainAdminPage' );
 	add_submenu_page( 'nksparta_admin_page', 'NK Sparta Style', 'Style', 'manage_options', 'nksparta_admin_style', 'nkSpartaMainAdminStyle' );
@@ -22,30 +22,32 @@ function nkSpartaMainAdminStyle() {
 // Sadrzaj admin pagea
 function nkSpartaMainAdminPageSettings() {
 	// registracija polja za bazu podataka
-	register_setting( 'nkSpartaOpcenito', 'puno_ime_kluba');
+	register_setting('nkSpartaOpcenito', 'puno_ime_kluba');
 	register_setting('nkSpartaOpcenito', 'skraceno_ime_kluba');
-	register_setting( 'nkSpartaOpcenito', 'grad');
+	register_setting('nkSpartaOpcenito', 'grad');
 	register_setting('nkSpartaOpcenito', 'postanski_broj');
-	register_setting( 'nkSpartaOpcenito', 'ulica' );
+	register_setting('nkSpartaOpcenito', 'ulica' );
 	register_setting('nkSpartaOpcenito', 'kucni_broj');
-	register_setting('nkSpartaKontakt', 'telefonski_broj');
-	register_setting('nkSpartaKontakt', 'email');
+	register_setting('nkSpartaOpcenito', 'oib');
+	register_setting('nkSpartaOpcenito', 'telefonski_broj');
+	register_setting('nkSpartaOpcenito', 'email');
 
 	// Grupacija polja
-	add_settings_section( 'nkSparta-opcenito', 'Opcenite Informacije', 'nkSpartaOpceniteInfo', 'nksparta_admin_page' );
-	add_settings_section( 'nkSparta-kontakt', 'Kontakt Informacije', 'nkSpartaKontaktInfo', 'nksparta_admin_page' );
+	add_settings_section('nkSparta-opcenito', 'Opcenite Informacije', 'nkSpartaOpceniteInfo', 'nksparta_admin_page' );
+	add_settings_section('nkSparta-kontakt', 'Kontakt Informacije', 'nkSpartaKontaktInfo', 'nksparta_admin_page' );
 
 	// Posebno polje
 		//Opcenito
-	add_settings_field( 'nkSpartaPunoImeKluba', 'Puno ime kluba', 'nkSpartaPunoIme', 'nksparta_admin_page', 'nkSparta-opcenito');
-	add_settings_field( 'nkSpartaSkracenoImeKluba', 'Skraceno ime kluba', 'nkSpartaSkracenoIme', 'nksparta_admin_page', 'nkSparta-opcenito');
-	add_settings_field( 'nkSpartaGrad', 'Grad', 'nkSpartaImeGrada', 'nksparta_admin_page', 'nkSparta-opcenito');
-	add_settings_field( 'nkSpartaPostanskiBroj', 'Postanski broj', 'nkSpartaPostBroj', 'nksparta_admin_page', 'nkSparta-opcenito');
-	add_settings_field( 'nkSpartaUlica', 'Ulica', 'nkSpartaUlica', 'nksparta_admin_page', 'nkSparta-opcenito');
-	add_settings_field( 'nkSpartaKucniBroj', 'Kucni broj', 'nkSpartaKucniBroj', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaPunoImeKluba', 'Puno ime kluba', 'nkSpartaPunoIme', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaSkracenoImeKluba', 'Skraceno ime kluba', 'nkSpartaSkracenoIme', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaGrad', 'Grad', 'nkSpartaImeGrada', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaPostanskiBroj', 'Postanski broj', 'nkSpartaPostBroj', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaUlica', 'Ulica', 'nkSpartaUlica', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaKucniBroj', 'Kucni broj', 'nkSpartaKucniBroj', 'nksparta_admin_page', 'nkSparta-opcenito');
+	add_settings_field('nkSpartaOib', 'OIB', 'nkSpartaOib', 'nksparta_admin_page', 'nkSparta-opcenito');
 		//Kontakt
-	add_settings_field( 'nkSpartaKontaktTelefon', 'Broj Telefona', 'nkSpartaKontaktTelefon', 'nksparta_admin_page', 'nkSparta-kontakt');
-	add_settings_field( 'nkSpartaEmail', 'Email', 'nkSpartaEmail', 'nksparta_admin_page','nkSparta-kontakt');
+	add_settings_field('nkSpartaKontaktTelefon', 'Broj Telefona', 'nkSpartaKontaktTelefon', 'nksparta_admin_page', 'nkSparta-kontakt');
+	add_settings_field('nkSpartaEmail', 'Email', 'nkSpartaEmail', 'nksparta_admin_page','nkSparta-kontakt');
 
 }
 // Sadrzaj grupe polja
@@ -80,6 +82,10 @@ function nkSpartaUlica() {
 function nkSpartaKucniBroj() {
 	$kucniBroj = esc_attr( get_option('kucni_broj') );
 	echo '<input type="text" name="kucni_broj" value="'.$kucniBroj.'" placeholder="Kucni broj" class="regular-text"></input>';
+}
+function nkSpartaOib() {
+	$oib = esc_attr( get_option('oib') );
+	echo '<input type="text" name="oib" value="'.$oib.'" placeholder="OIB" class="regular-text"></input>';
 }
 // Kontakt
 function nkSpartaKontaktTelefon() {
