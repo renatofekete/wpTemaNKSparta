@@ -9,8 +9,6 @@ function nkSpartaAdminPage() {
 	add_action( 'admin_init', 'nkSpartaMainAdminPageSettings');
 }
 add_action('admin_menu' , 'nkSpartaAdminPage');
-
-
 // Izgled i sadrzaj naslova admin page-a
 function nkSpartaMainAdminPage() {
 	require_once(get_template_directory() . '/inc/templates/admin-general.php');
@@ -18,7 +16,6 @@ function nkSpartaMainAdminPage() {
 function nkSpartaMainAdminStyle() {
 	require_once(get_template_directory() . '/inc/templates/admin-style.php');	
 }
-
 // Sadrzaj admin pagea
 function nkSpartaMainAdminPageSettings() {
 	// registracija polja za bazu podataka
@@ -31,11 +28,9 @@ function nkSpartaMainAdminPageSettings() {
 	register_setting('nkSpartaOpcenito', 'oib');
 	register_setting('nkSpartaOpcenito', 'telefonski_broj');
 	register_setting('nkSpartaOpcenito', 'email');
-
 	// Grupacija polja
 	add_settings_section('nkSparta-opcenito', 'Opcenite Informacije', 'nkSpartaOpceniteInfo', 'nksparta_admin_page' );
 	add_settings_section('nkSparta-kontakt', 'Kontakt Informacije', 'nkSpartaKontaktInfo', 'nksparta_admin_page' );
-
 	// Posebno polje
 		//Opcenito
 	add_settings_field('nkSpartaPunoImeKluba', 'Puno ime kluba', 'nkSpartaPunoIme', 'nksparta_admin_page', 'nkSparta-opcenito');
@@ -48,16 +43,13 @@ function nkSpartaMainAdminPageSettings() {
 		//Kontakt
 	add_settings_field('nkSpartaKontaktTelefon', 'Broj Telefona', 'nkSpartaKontaktTelefon', 'nksparta_admin_page', 'nkSparta-kontakt');
 	add_settings_field('nkSpartaEmail', 'Email', 'nkSpartaEmail', 'nksparta_admin_page','nkSparta-kontakt');
-
 }
 // Sadrzaj grupe polja
 function nkSpartaOpceniteInfo() {
 	// Provjeriti sto tu ide
 }
 function nkSpartaKontaktInfo() {
-
 }
-
 // Sadrzaj individualnog polja 
 function nkSpartaPunoIme() {
 	$punoImeKluba = esc_attr(get_option('puno_ime_kluba'));
@@ -95,21 +87,5 @@ function nkSpartaKontaktTelefon() {
 function nkSpartaEmail() {
 	$email = esc_attr(get_option('email'));
 		echo '<input type="text" name="email" value="'.$email.'" placeholder="Email" class="regular-text"></input>';
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>

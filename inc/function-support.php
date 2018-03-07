@@ -3,7 +3,6 @@
 if (! function_exists('nkSpartaSupport')):
 	function nkSpartaSupport() {
 		add_theme_support( 'post-thumbnails' ); 
-
 		add_theme_support('post-formats', array(
 																		'aside',
 																		'gallery',
@@ -14,7 +13,4 @@ if (! function_exists('nkSpartaSupport')):
 	}
 endif;
 add_action('after_setup_theme', 'nkSpartaSupport');
-
-
-
 ?>
